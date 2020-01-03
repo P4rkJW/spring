@@ -1,5 +1,6 @@
-package org.catstones.springcat;
+package org.catstones.springcat.repository;
 
+import org.catstones.springcat.entity.Post;
 import org.springframework.data.repository.CrudRepository;
 
 /**

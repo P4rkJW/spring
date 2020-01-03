@@ -10,8 +10,11 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import org.catstones.springcat.repository.*;
+import org.catstones.springcat.entity.*;
+
 @SpringBootTest
-class PostRepositoryTest {
+public class PostRepositoryTest {
 
     @Autowired
     PostRepository postRepo;
@@ -22,7 +25,7 @@ class PostRepositoryTest {
     }
 
     @Test
-    public void LoadAllPosts() {
+    public void loadAllPosts() {
         postRepo.save(Post.builder().title("안녕").author("An Nyeong")
                 .content("이게 본문입니다 이게 엄청 길어진다고 하면 안되는데 말이야").build());
 

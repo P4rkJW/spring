@@ -1,4 +1,4 @@
-package org.catstones.springcat.models;
+package org.catstones.springcat.entity;
 
 import java.time.LocalDateTime;
 

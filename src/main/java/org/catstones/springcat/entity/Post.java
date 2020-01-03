@@ -1,4 +1,4 @@
-package org.catstones.springcat;
+package org.catstones.springcat.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -6,8 +6,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
-import org.catstones.springcat.models.BaseEntity;
 
 import lombok.AccessLevel;
 import lombok.Builder;
@@ -42,5 +40,12 @@ public class Post extends BaseEntity {
         this.author = author;
         this.content = content;
         this.title = title;
+    }
+
+    public Post update(String author, String title, String content) {
+        this.author = author;
+        this.title = title;
+        this.content = content;
+        return this;
     }
 }
