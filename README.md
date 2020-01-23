@@ -1,14 +1,15 @@
-# spring-cat
+## 실행
 
-## Structure
+```
+$ export GOOGLE_APPLICATION_CREDENTIALS="$(pwd)/firebase-admin.json"
+$ ./gradlew bootRun
+```
 
-`/src/main/java/org/catstones/springcat`
+## 디렉토리
 
-- advice
-- config
-- controller
-- entity
-- exception
-- repository
-- response
-- service
+- `api`: RESTful API
+- `common`:
+- `config`:
+- `entity`: 데이터 모델
+- `repository`: 외부와 소통 (DB 등)
+- `web`: Web Contollers
