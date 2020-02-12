@@ -7,10 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import lombok.AccessLevel;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 /**
  * 게시판 Entity
@@ -19,33 +16,43 @@ import lombok.NoArgsConstructor;
  */
 @Entity
 @Getter
-@Table(name = "post")
+@Setter
+@Table(name = "board")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class Post extends BaseEntity {
+public class Post{
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Column(name = "seq")
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long seq;
 
-    @Column(length = 10, nullable = false)
-    private String author;
+    @Column(name = "file")
+    private String file;
 
-    @Column(length = 100, nullable = false)
+    @Column(name = "title")
     private String title;
 
-    @Column(columnDefinition = "TEXT", nullable = false)
+    @Column(name = "content")
     private String content;
 
+    @Column(name = "recommand")
+    private int recommand;
+
+    @Column(name = "oppose")
+    private int oppose;
+
     @Builder
-    public Post(String author, String title, String content) {
-        this.author = author;
-        this.content = content;
+    public Post(long seq, String file, String title, int oppose, int recommand, String content) {
+        this.seq = seq;
+        this.file = file;
         this.title = title;
+        this.oppose = oppose;
+        this.recommand = recommand;
+        this.content = content;
     }
 
-    public Post update(String author, String title, String content) {
-        this.author = author;
-        this.title = title;
-        this.content = content;
-        return this;
-    }
+//    public Post update(String author, String title, String content) {
+//        this.title = title;
+//        this.content = content;
+//        return this;
+//    }
 }

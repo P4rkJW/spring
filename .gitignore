@@ -33,3 +33,6 @@ out/
 
 ### macOS ###
 .DS_Store
+
+### Firebase ###
+/firebase-admin.json
