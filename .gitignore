@@ -35,4 +35,6 @@ out/
 .DS_Store
 
 ### Firebase ###
+./firebase-admin.json
+firebase-admin.json
 /firebase-admin.json
